@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VFXEditor", "VFXEditor\VFXE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Penumbra.String", "Penumbra.String\Penumbra.String.csproj", "{77895120-9D50-43F0-A908-41B66F47B736}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VFXEditor.ExternalApp", "VFXEditor.ExternalApp\VFXEditor.ExternalApp.csproj", "{3375C0B5-15DD-4933-BECA-E4B89E6F901A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Beta|x64 = Beta|x64
@@ -40,6 +42,12 @@ Global
 		{77895120-9D50-43F0-A908-41B66F47B736}.Debug|x64.Build.0 = Release|x64
 		{77895120-9D50-43F0-A908-41B66F47B736}.Release|x64.ActiveCfg = Release|x64
 		{77895120-9D50-43F0-A908-41B66F47B736}.Release|x64.Build.0 = Release|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Beta|x64.ActiveCfg = Debug|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Beta|x64.Build.0 = Debug|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Debug|x64.ActiveCfg = Debug|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Debug|x64.Build.0 = Debug|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Release|x64.ActiveCfg = Release|x64
+		{3375C0B5-15DD-4933-BECA-E4B89E6F901A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

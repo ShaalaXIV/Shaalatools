@@ -1,0 +1,56 @@
+<Window
+    x:Class="VFXEditor.ExternalApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:VFXEditor.ExternalApp.ViewModels"
+    mc:Ignorable="d"
+    Title="VFX Editor External">
+
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="16" ColumnSpacing="12" RowSpacing="12">
+        <TextBlock FontSize="24" FontWeight="SemiBold" Text="VFX Editor External (Prototype)" />
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+            <TextBox Header="Penumbra Mods Folder"
+                     PlaceholderText="C:\\XIVLauncher\\pluginConfigs\\Penumbra\\mod"
+                     Text="{Binding ModsDirectory, Mode=TwoWay}" />
+            <Button Grid.Column="1" Content="Scan" Command="{Binding ScanCommand}" />
+            <Button Grid.Column="2" Content="Save" Command="{Binding SaveCommand}" />
+        </Grid>
+
+        <Grid Grid.Row="2" ColumnDefinitions="2*,3*" ColumnSpacing="12">
+            <StackPanel>
+                <TextBlock FontWeight="SemiBold" Text="Discovered Editable Assets" />
+                <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Includes .pap, .avfx, .tmb, .eid, .uld, .atex, .tex, .atch, .sklb, .skp, .shpk, .shcd, .mtrl, .mdl (no .scd)." TextWrapping="WrapWholeWords"/>
+                <ListView Height="560"
+                          ItemsSource="{Binding Entries}"
+                          SelectedItem="{Binding SelectedEntry, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,4">
+                                <TextBlock FontWeight="SemiBold" Text="{Binding RelativePath}" />
+                                <TextBlock Opacity="0.7" Text="{Binding ModName}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock FontWeight="SemiBold" Text="Simple Raw Editor" />
+                <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Save automatically creates timestamped backups before overwriting." />
+                <TextBox AcceptsReturn="True"
+                         Height="560"
+                         TextWrapping="NoWrap"
+                         FontFamily="Consolas"
+                         Text="{Binding EditorContent, Mode=TwoWay}" />
+                <TextBlock Margin="0,8,0,0" Text="{Binding StatusText}" TextWrapping="WrapWholeWords" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

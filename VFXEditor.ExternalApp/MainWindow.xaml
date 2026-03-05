@@ -40,7 +40,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel>
                 <TextBlock FontWeight="SemiBold" Text="Discovered Editable Assets" />
-                <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Includes .pap, .avfx, .tmb, .eid, .uld, .atex, .tex, .atch, .sklb, .skp, .shpk, .shcd, .mtrl, .mdl (no .scd)." TextWrapping="WrapWholeWords"/>
+                <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Includes .pap, .avfx, .tmb, .eid, .uld, .atex, .tex, .atch, .sklb, .skp, .shpk, .shcd, .mtrl, .mdl (no .scd)." TextWrapping="Wrap"/>
                 <ListView Height="560"
                           ItemsSource="{Binding Entries}"
                           SelectedItem="{Binding SelectedEntry, Mode=TwoWay}">
@@ -55,7 +55,7 @@
                 </ListView>
             </StackPanel>
 
-            <StackPanel>
+            <StackPanel Grid.Column="1">
                 <TextBlock FontWeight="SemiBold" Text="Simple Raw Editor" />
                 <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Save automatically creates timestamped backups before overwriting." />
                 <TextBox AcceptsReturn="True"
@@ -63,7 +63,7 @@
                          TextWrapping="NoWrap"
                          FontFamily="Consolas"
                          Text="{Binding EditorContent, Mode=TwoWay}" />
-                <TextBlock Margin="0,8,0,0" Text="{Binding StatusText}" TextWrapping="WrapWholeWords" />
+                <TextBlock Margin="0,8,0,0" Text="{Binding StatusText}" TextWrapping="Wrap" />
             </StackPanel>
         </Grid>
     </Grid>

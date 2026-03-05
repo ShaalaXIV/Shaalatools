@@ -12,10 +12,20 @@
         <viewModels:MainViewModel />
     </Window.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,*" Padding="16" ColumnSpacing="12" RowSpacing="12">
+    <Grid Padding="16" ColumnSpacing="12" RowSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <TextBlock FontSize="24" FontWeight="SemiBold" Text="VFX Editor External (Prototype)" />
 
-        <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+        <Grid Grid.Row="1" ColumnSpacing="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <TextBox Header="Penumbra Mods Folder"
                      PlaceholderText="C:\\XIVLauncher\\pluginConfigs\\Penumbra\\mod"
                      Text="{Binding ModsDirectory, Mode=TwoWay}" />
@@ -23,7 +33,11 @@
             <Button Grid.Column="2" Content="Save" Command="{Binding SaveCommand}" />
         </Grid>
 
-        <Grid Grid.Row="2" ColumnDefinitions="2*,3*" ColumnSpacing="12">
+        <Grid Grid.Row="2" ColumnSpacing="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
             <StackPanel>
                 <TextBlock FontWeight="SemiBold" Text="Discovered Editable Assets" />
                 <TextBlock Margin="0,0,0,8" Opacity="0.7" Text="Includes .pap, .avfx, .tmb, .eid, .uld, .atex, .tex, .atch, .sklb, .skp, .shpk, .shcd, .mtrl, .mdl (no .scd)." TextWrapping="WrapWholeWords"/>

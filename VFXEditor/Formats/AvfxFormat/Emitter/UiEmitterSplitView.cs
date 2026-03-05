@@ -27,9 +27,9 @@ namespace VfxEditor.AvfxFormat {
             using var _ = ImRaii.PushId( idx );
 
             using( var style = ImRaii.PushStyle(ImGuiStyleVar.FramePadding, new Vector2(0f, 0f))) {
-                var enabled = item.GetEnabledToggle();
+                var enabled = item.Enabled.Value ?? false;
                 if( ImGui.Checkbox( "##Enable", ref enabled ) ) {
-                    item.SetEnableToggle( enabled );
+                    item.Enabled.Value = enabled;
                 }
                 ImGui.SameLine();
             }

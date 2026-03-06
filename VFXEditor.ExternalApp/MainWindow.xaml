@@ -8,11 +8,10 @@
     mc:Ignorable="d"
     Title="VFX Editor External">
 
-    <Window.DataContext>
-        <viewModels:MainViewModel />
-    </Window.DataContext>
-
-    <Grid Padding="16" ColumnSpacing="12" RowSpacing="12">
+    <Grid Margin="16" ColumnSpacing="12" RowSpacing="12">
+        <Grid.DataContext>
+            <viewModels:MainViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
